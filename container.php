@@ -3,6 +3,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use appelsOffres\Controleurs\ControleurHome;
+use appelsOffres\Controleurs\ControleurAppelsOffres;
 
 $configuration = [
     'settings' => [
@@ -23,6 +24,11 @@ $container['view'] = function ($container) {
 $container['ControleurHome'] = function ($c){
     $view = $c->get('view');
     return new ControleurHome($view);
+};
+
+$container['ControleurAppelsOffres'] = function ($c){
+    $view = $c->get('view');
+    return new ControleurAppelsOffres($view);
 };
 
 
